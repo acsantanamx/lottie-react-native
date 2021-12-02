@@ -137,6 +137,12 @@ declare module "lottie-react-native" {
      */
     onLayout?: (event: LayoutChangeEvent) => void;
 
+
+    onHoverEnter ?: () => void;
+
+    onHoverExit ?: () => void;
+
+
     /**
      * An array of layers you want to override its color filter.
      */

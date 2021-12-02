@@ -10,7 +10,8 @@ import android.widget.ImageView;
 import android.view.View.OnAttachStateChangeListener;
 import android.view.View;
 
-import com.airbnb.lottie.LottieAnimationView;
+
+//import com.airbnb.lottie.LottieAnimationView;
 import com.airbnb.lottie.RenderMode;
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
@@ -70,6 +71,8 @@ class LottieAnimationViewManager extends SimpleViewManager<LottieAnimationView> 
     return view;
   }
 
+
+
   private void sendOnAnimationFinishEvent(final LottieAnimationView view, boolean isCancelled) {
     WritableMap event = Arguments.createMap();
     event.putBoolean("isCancelled", isCancelled);
@@ -97,6 +100,16 @@ class LottieAnimationViewManager extends SimpleViewManager<LottieAnimationView> 
             MapBuilder.of(
                 "phasedRegistrationNames",
                 MapBuilder.of("bubbled", "onAnimationFinish")))
+        .put(
+            "hoverEnter",
+            MapBuilder.of(
+                "phasedRegistrationNames",
+                 MapBuilder.of("bubbled", "onHoverEnter")))
+        .put(
+            "hoverExit",
+            MapBuilder.of(
+                "phasedRegistrationNames",
+                 MapBuilder.of("bubbled", "onHoverExit")))
         .build();
   }
 
